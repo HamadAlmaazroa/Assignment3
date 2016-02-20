@@ -10,7 +10,6 @@ package cse360assign3;
  
 public class Calculator {
 
-	
 	private int total;
 	
 	/**
@@ -39,6 +38,7 @@ public class Calculator {
 	public void add (int value) {
 		total += value;
 	}
+	
 	/**
 	 * subtract - subtract method that is used to subtract integers and reuturn the differen
 	 * between the two
@@ -48,7 +48,6 @@ public class Calculator {
 	
 	public void subtract (int value) {
 		total -= value;
-
 	}
 	
 	/**
@@ -62,7 +61,6 @@ public class Calculator {
 			total =1;
 		
 		total = total * value;
-
 	}
 	
 	/**
@@ -82,7 +80,6 @@ public class Calculator {
 	/**
 	 * getHistory - getHistory method that is used to an empty string
 	 * 
-	 * @param value
 	 */
 	
 	public String getHistory () {
