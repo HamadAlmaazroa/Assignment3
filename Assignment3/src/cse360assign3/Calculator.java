@@ -9,8 +9,10 @@ package cse360assign3;
  */
  
 public class Calculator {
-
+ 
 	private int total;
+	private String historyOfAction;
+	private String temporary;
 	
 	/**
 	 * Calculator - constructor that is used to set the variable total to zero
@@ -19,11 +21,14 @@ public class Calculator {
 	
 	public Calculator () {
 		total = 0;  // not needed - included for clarity
+		historyOfAction = "" + 0;
+		temporary = "";
 	}
 	
 	/**
-	 * getTotal - get total method that has no argument and will return a 0
-	 * @return 0
+	 * getTotal - get total method that has no argument and will return the total
+	 * 
+	 * @return total
 	 */
 	
 	public int getTotal () {
@@ -37,17 +42,19 @@ public class Calculator {
 	 */
 	public void add (int value) {
 		total += value;
+		historyOfAction +=" + " + value; 
 	}
 	
 	/**
-	 * subtract - subtract method that is used to subtract integers and reuturn the differen
-	 * between the two
+	 * subtract - subtract method that is used to subtract integers
 	 * 
 	 * @param value
 	 */
 	
 	public void subtract (int value) {
 		total -= value;
+		historyOfAction +=" - " + value; 
+
 	}
 	
 	/**
@@ -61,6 +68,7 @@ public class Calculator {
 			total =1;
 		
 		total = total * value;
+		historyOfAction +=" * " + value; 
 	}
 	
 	/**
@@ -74,15 +82,20 @@ public class Calculator {
 			total = 0;
 		else
 		total /= value;
-
+		historyOfAction +=" / " + value; 
 	}
 	
 	/**
-	 * getHistory - getHistory method that is used to an empty string
+	 * getHistory - getHistory method that is used to return a history
+	 *  of all arithmetic operations as a string.
 	 * 
+	 * @return temporary which has the history of the arithmetic operation
 	 */
 	
 	public String getHistory () {
-		return "";
+		temporary = historyOfAction;
+		historyOfAction = "" + 0;
+		return temporary;	
+		
 	}
 }

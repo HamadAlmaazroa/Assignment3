@@ -8,11 +8,11 @@ import org.junit.Test;
  * CalculatorTest class that uses Junit library to test examine one unit of the code at a time
  * 
  * @author hamad almazroa for CSE 360
+ * Pin : 107
  */
 
 public class CalculatorTest {
 
-	
 	@Test
 	public void testCalculator() {
 
@@ -151,8 +151,21 @@ public class CalculatorTest {
 	public void testGetHistory() {
 		Calculator test = new Calculator();
 		
-		// Test getHistory to check if it has an empty string
-		assertEquals("", test.getHistory());
+		// Test getHistory to check if it has the history
+		// of all arithmetic operation that are been done
+		test.add(4);
+		test.subtract(2);
+		test.multiply(2);
+		test.add(5);
+		assertEquals("0 + 4 - 2 * 2 + 5", test.getHistory());
+		
+		// Test getHistory to check if it has the history
+		// of all arithmetic operation that are been done
+		test.multiply(4);
+		test.subtract(3);
+		test.add(7);
+		test.add(10);
+		test.divide(4);
+		assertEquals("0 * 4 - 3 + 7 + 10 / 4", test.getHistory());
 	}
-
 }
